@@ -19,13 +19,13 @@
             <Style TargetType="PasswordBox" BasedOn="{StaticResource BaseStyle}"/>
         </StackPanel.Resources>
         <TextBlock Text="Email"/>
-        <TextBox/>
+        <TextBox x:Name="EmailBox"/>
         <TextBlock Text="Username"/>
-        <TextBox/>
+        <TextBox x:Name="UsernameBox"/>
         <TextBlock Text="Password"/>
-        <PasswordBox/>
+        <PasswordBox x:Name="FirstPasswordBox"/>
         <TextBlock Text="Repeat Password"/>
-        <PasswordBox/>
-        <Button Name="SignUpButton" Content="Sign Up" Width="100" Margin="10"/>
+        <PasswordBox x:Name="SecondPasswordBox"/>
+        <Button x:Name="SignUpButton" Content="Sign Up" Width="100" Margin="10" IsDefault="True" Click="SignUpButton_Click"/>
     </StackPanel>
 </Window>
