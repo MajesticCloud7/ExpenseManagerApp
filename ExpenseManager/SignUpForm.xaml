@@ -1,0 +1,31 @@
+﻿<Window x:Class="ExpenseManager.SignUpForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterOwner"
+        Height="250"
+        Width="250"
+        ResizeMode="CanMinimize">
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel.Resources>
+            <Style TargetType="FrameworkElement" x:Key="BaseStyle">
+                <Setter Property="Width" Value="150"/>
+                <Setter Property="Margin" Value="1"/>
+            </Style>
+            <Style TargetType="TextBlock" BasedOn="{StaticResource BaseStyle}"/>
+            <Style TargetType="TextBox" BasedOn="{StaticResource BaseStyle}"/>
+            <Style TargetType="PasswordBox" BasedOn="{StaticResource BaseStyle}"/>
+        </StackPanel.Resources>
+        <TextBlock Text="Email"/>
+        <TextBox/>
+        <TextBlock Text="Username"/>
+        <TextBox/>
+        <TextBlock Text="Password"/>
+        <PasswordBox/>
+        <TextBlock Text="Repeat Password"/>
+        <PasswordBox/>
+        <Button Name="SignUpButton" Content="Sign Up" Width="100" Margin="10"/>
+    </StackPanel>
+</Window>
