@@ -44,7 +44,7 @@ namespace ExpenseManager
 
         private void SignInButton_Click(object sender, RoutedEventArgs e)
         {
-            var dialog = new SignInForm()
+            var dialog = new SignInForm(UsersCollection)
             {
                 Owner = this
             };
