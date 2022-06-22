@@ -4,10 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Expense Manager" Height="450" Width="800"
+        Title="Expense Manager" Height="450" Width="450"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanMinimize">
     <StackPanel VerticalAlignment="Center">
-        <Button Name="SignUpButton" Content="Sign Up" Width="100" Click="SignUpButton_Click"/>
+        <Button Name="SignInButton" Content="Sign In" Width="100" Margin="1" Click="SignInButton_Click"/>
+        <Button Name="SignUpButton" Content="Sign Up" Width="100" Margin="1" Click="SignUpButton_Click"/>
     </StackPanel>
 </Window>
