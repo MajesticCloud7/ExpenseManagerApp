@@ -22,6 +22,6 @@
         <TextBox x:Name="UsernameBox"/>
         <TextBlock Text="Password"/>
         <PasswordBox x:Name="PasswordBox"/>
-        <Button x:Name="SignInButton" Content="Sign In" Width="100" Margin="10" IsDefault="True"/>
+        <Button x:Name="SignInButton" Content="Sign In" Width="100" Margin="10" IsDefault="True" Click="SignInButton_Click"/>
     </StackPanel>
 </Window>
