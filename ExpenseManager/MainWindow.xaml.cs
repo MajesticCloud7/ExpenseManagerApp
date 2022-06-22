@@ -41,5 +41,14 @@ namespace ExpenseManager
             };
             dialog.ShowDialog();
         }
+
+        private void SignInButton_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new SignInForm()
+            {
+                Owner = this
+            };
+            dialog.ShowDialog();
+        }
     }
 }
