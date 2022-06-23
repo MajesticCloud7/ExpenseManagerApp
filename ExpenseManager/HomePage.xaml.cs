@@ -37,7 +37,7 @@ namespace ExpenseManager
             };
             if (dialog.ShowDialog() == true)
             {
-                MainWindow.View.Content = new MainPage();
+                MainWindow.View.Content = new MainPage(MainWindow);
             }
         }
     }

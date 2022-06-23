@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ExpenseManager
 {
@@ -20,9 +8,21 @@ namespace ExpenseManager
     /// </summary>
     public partial class MainPage : Page
     {
-        public MainPage()
+        private readonly MainWindow MainWindow;
+
+        public MainPage(MainWindow mainWindow)
         {
             InitializeComponent();
+            MainWindow = mainWindow;
+        }
+
+        private void AddExpenseButton_Click(object sender, RoutedEventArgs e)
+        {
+            var dialog = new NewExpenseForm()
+            {
+                Owner = MainWindow
+            };
+            dialog.ShowDialog();
         }
     }
 }

@@ -8,5 +8,7 @@
       Title="MainPage">
     <StackPanel Margin="10">
         <TextBlock Text="My Expense"/>
+        <Separator Height="20"/>
+        <Button x:Name="AddExpenseButton" Content="Add" Width="60" HorizontalAlignment="Left" Click="AddExpenseButton_Click"/>
     </StackPanel>
 </Page>
