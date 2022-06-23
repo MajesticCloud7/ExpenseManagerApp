@@ -15,7 +15,7 @@ namespace ExpenseManager
         {
             InitializeComponent();
             UsersCollection = usersCollection;
-            UsernameBox.Focus();
+            EmailBox.Focus();
         }
 
         private void SignUpButton_Click(object sender, RoutedEventArgs e)
@@ -30,6 +30,7 @@ namespace ExpenseManager
             {
                 var newUser = new User(email, username, firstPassword);
                 UsersCollection.InsertOne(newUser);
+                DialogResult = true;
             }
         }
     }
