@@ -10,6 +10,7 @@ namespace ExpenseManager
     public partial class SignInForm : Window
     {
         private readonly IMongoCollection<User> UsersCollection;
+        public User SignedInUser { get; private set; }
 
         public SignInForm(IMongoCollection<User> usersCollection)
         {
@@ -26,6 +27,7 @@ namespace ExpenseManager
 
             if (SigningInVerifier.Verify(username, password, existingUsers))
             {
+                SignedInUser = UsersCollection.Find(u => u.Username.Equals(username)).First();
                 DialogResult = true;
             }
         }

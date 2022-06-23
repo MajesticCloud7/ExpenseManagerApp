@@ -12,12 +12,14 @@ namespace ExpenseManager
     {
         private readonly MainWindow MainWindow;
         private readonly IMongoCollection<User> UsersCollection;
+        private readonly IMongoCollection<Record> RecordsCollection;
 
-        public HomePage(MainWindow mainWindow, IMongoCollection<User> usersCollection)
+        public HomePage(MainWindow mainWindow, IMongoCollection<User> usersCollection, IMongoCollection<Record> recordsCollection)
         {
             InitializeComponent();
             MainWindow = mainWindow;
             UsersCollection = usersCollection;
+            RecordsCollection = recordsCollection;
         }
 
         private void SignUpButton_Click(object sender, RoutedEventArgs e)
@@ -37,7 +39,7 @@ namespace ExpenseManager
             };
             if (dialog.ShowDialog() == true)
             {
-                MainWindow.View.Content = new MainPage(MainWindow);
+                MainWindow.View.Content = new MainPage(MainWindow, dialog.SignedInUser, RecordsCollection);
             }
         }
     }
