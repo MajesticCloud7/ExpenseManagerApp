@@ -20,6 +20,7 @@ namespace ExpenseManager
             InitializeComponent();
             InitializeDatabase();
             InitializeCollections();
+            View.Content = new HomePage(this, UsersCollection);
         }
 
         private void InitializeDatabase()
@@ -31,24 +32,6 @@ namespace ExpenseManager
         private void InitializeCollections()
         {
             UsersCollection = Database.GetCollection<User>(UsersCollectionName);
-        }
-
-        private void SignUpButton_Click(object sender, RoutedEventArgs e)
-        {
-            var dialog = new SignUpForm(UsersCollection)
-            {
-                Owner = this
-            };
-            dialog.ShowDialog();
-        }
-
-        private void SignInButton_Click(object sender, RoutedEventArgs e)
-        {
-            var dialog = new SignInForm(UsersCollection)
-            {
-                Owner = this
-            };
-            dialog.ShowDialog();
         }
     }
 }
