@@ -1,14 +1,23 @@
 ﻿<Page x:Class="ExpenseManager.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      mc:Ignorable="d" 
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
       d:DesignHeight="450" d:DesignWidth="450"
       Title="MainPage">
     <StackPanel Margin="10">
         <TextBlock Text="My Expense"/>
         <Separator Height="20"/>
         <Button x:Name="AddExpenseButton" Content="Add" Width="60" HorizontalAlignment="Left" Click="AddExpenseButton_Click"/>
+        <Separator Height="5" Opacity="0"/>
+        <ListView x:Name="RecordsTable" MaxHeight="320">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Amount" Width="100" DisplayMemberBinding="{Binding Amount}" />
+                    <GridViewColumn Header="Description" Width="280" DisplayMemberBinding="{Binding Description}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
     </StackPanel>
 </Page>
