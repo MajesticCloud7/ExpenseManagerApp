@@ -11,6 +11,7 @@ namespace ExpenseManager
     {
         private readonly User RecordOwner;
         private readonly IMongoCollection<Record> RecordsCollection;
+        public Record NewExpense { get; private set; }
 
         public NewExpenseForm(User recordOwner, IMongoCollection<Record> recordsCollection)
         {
@@ -29,6 +30,7 @@ namespace ExpenseManager
             {
                 var newExpense = new Record(RecordOwner.Id, RecordType.Expense, amount, description);
                 RecordsCollection.InsertOne(newExpense);
+                NewExpense = newExpense;
                 DialogResult = true;
             }
             else
