@@ -7,8 +7,5 @@
         Title="Expense Manager" Height="450" Width="450"
         WindowStartupLocation="CenterScreen"
         ResizeMode="CanMinimize">
-    <StackPanel VerticalAlignment="Center">
-        <Button Name="SignInButton" Content="Sign In" Width="100" Margin="1" Click="SignInButton_Click"/>
-        <Button Name="SignUpButton" Content="Sign Up" Width="100" Margin="1" Click="SignUpButton_Click"/>
-    </StackPanel>
+    <Frame x:Name="View" NavigationUIVisibility="Hidden"/>
 </Window>

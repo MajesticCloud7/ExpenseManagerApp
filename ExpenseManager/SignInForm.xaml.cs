@@ -25,7 +25,7 @@ namespace ExpenseManager
 
             if (SigningInVerifier.Verify(username, password, existingUsers))
             {
-                // TODO: open main app window
+                DialogResult = true;
             }
         }
     }
