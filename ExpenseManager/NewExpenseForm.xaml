@@ -22,6 +22,6 @@
         <TextBox x:Name="AmountBox"/>
         <TextBlock Text="Description"/>
         <TextBox x:Name="DescriptionBox" TextWrapping="Wrap" Height="100"/>
-        <Button x:Name="AddButton" Content="Add" Width="100" Margin="10" IsDefault="True"/>
+        <Button x:Name="AddButton" Content="Add" Width="100" Margin="10" IsDefault="True" Click="AddButton_Click"/>
     </StackPanel>
 </Window>
