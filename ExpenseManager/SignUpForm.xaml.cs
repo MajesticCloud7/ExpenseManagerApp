@@ -15,6 +15,7 @@ namespace ExpenseManager
         {
             InitializeComponent();
             UsersCollection = usersCollection;
+            UsernameBox.Focus();
         }
 
         private void SignUpButton_Click(object sender, RoutedEventArgs e)
