@@ -1,5 +1,5 @@
-﻿using ExpenseManager;
-using ExpenseManager.DatabaseModels;
+﻿using ExpenseManager.DatabaseModels;
+using ExpenseManager.Verifiers;
 
 namespace UnitTests
 {

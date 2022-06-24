@@ -1,4 +1,5 @@
 ﻿using ExpenseManager.DatabaseModels;
+using ExpenseManager.Pages;
 using MongoDB.Driver;
 using System.Windows;
 
