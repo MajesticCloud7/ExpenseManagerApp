@@ -16,13 +16,15 @@ namespace ExpenseManager
         private IMongoDatabase Database;
         private IMongoCollection<User> UsersCollection;
         private IMongoCollection<Record> RecordsCollection;
+        private readonly HomePage HomePage;
 
         public MainWindow()
         {
             InitializeComponent();
             InitializeDatabase();
             InitializeCollections();
-            View.Content = new HomePage(this, UsersCollection, RecordsCollection);
+            HomePage = new HomePage(this, UsersCollection, RecordsCollection);
+            GoToHomePage();
         }
 
         private void InitializeDatabase()
@@ -35,6 +37,11 @@ namespace ExpenseManager
         {
             UsersCollection = Database.GetCollection<User>(UsersCollectionName);
             RecordsCollection = Database.GetCollection<Record>(RecordsCollectionName);
+        }
+
+        public void GoToHomePage()
+        {
+            View.Content = HomePage;
         }
     }
 }
