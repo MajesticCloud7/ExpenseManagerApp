@@ -21,6 +21,6 @@
         <TextBox x:Name="AmountBox" Text="{Binding Amount}"/>
         <TextBlock Text="Description"/>
         <TextBox x:Name="DescriptionBox" TextWrapping="Wrap" Height="100" Text="{Binding Description}"/>
-        <Button x:Name="SaveButton" Content="Save" Width="100" Margin="10" IsDefault="True"/>
+        <Button x:Name="SaveButton" Content="Save" Width="100" Margin="10" IsDefault="True" Click="SaveButton_Click"/>
     </StackPanel>
 </Window>

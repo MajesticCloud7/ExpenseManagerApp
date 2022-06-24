@@ -43,7 +43,7 @@ namespace ExpenseManager
             var expense = (Record)RecordsTable.SelectedItem;
             if (expense is not null)
             {
-                var dialog = new EditExpenseForm(expense)
+                var dialog = new EditExpenseForm(expense, RecordsCollection)
                 {
                     Owner = MainWindow
                 };
