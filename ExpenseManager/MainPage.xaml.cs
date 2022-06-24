@@ -37,5 +37,18 @@ namespace ExpenseManager
                 RecordsTable.Items.Add(dialog.NewExpense);
             }
         }
+
+        private void EditExpenseButton_Click(object sender, RoutedEventArgs e)
+        {
+            var expense = (Record)RecordsTable.SelectedItem;
+            if (expense is not null)
+            {
+                var dialog = new EditExpenseForm(expense)
+                {
+                    Owner = MainWindow
+                };
+                dialog.ShowDialog();
+            }
+        }
     }
 }

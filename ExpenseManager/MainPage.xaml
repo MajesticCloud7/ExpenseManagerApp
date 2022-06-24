@@ -9,9 +9,12 @@
     <StackPanel Margin="10">
         <TextBlock Text="My Expense"/>
         <Separator Height="20"/>
-        <Button x:Name="AddExpenseButton" Content="Add" Width="60" HorizontalAlignment="Left" Click="AddExpenseButton_Click"/>
+        <UniformGrid Rows="1" Width="165" HorizontalAlignment="Left">
+            <Button x:Name="AddExpenseButton" Content="Add" Width="80" HorizontalAlignment="Left" Click="AddExpenseButton_Click"/>
+            <Button x:Name="EditExpenseButton" Content="Edit Selected" Width="80" HorizontalAlignment="Right" Click="EditExpenseButton_Click"/>
+        </UniformGrid>
         <Separator Height="5" Opacity="0"/>
-        <ListView x:Name="RecordsTable" MaxHeight="320">
+        <ListView x:Name="RecordsTable" MaxHeight="320" SelectionMode="Single">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Amount" Width="100" DisplayMemberBinding="{Binding Amount}" />

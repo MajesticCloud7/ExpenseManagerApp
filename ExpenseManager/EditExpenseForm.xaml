@@ -1,4 +1,4 @@
-﻿<Window x:Class="ExpenseManager.NewExpenseForm"
+﻿<Window x:Class="ExpenseManager.EditExpenseForm"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -18,9 +18,9 @@
             <Style TargetType="TextBox" BasedOn="{StaticResource BaseStyle}"/>
         </StackPanel.Resources>
         <TextBlock Text="Amount"/>
-        <TextBox x:Name="AmountBox"/>
+        <TextBox x:Name="AmountBox" Text="{Binding Amount}"/>
         <TextBlock Text="Description"/>
-        <TextBox x:Name="DescriptionBox" TextWrapping="Wrap" Height="100"/>
-        <Button x:Name="AddButton" Content="Add" Width="100" Margin="10" IsDefault="True" Click="AddButton_Click"/>
+        <TextBox x:Name="DescriptionBox" TextWrapping="Wrap" Height="100" Text="{Binding Description}"/>
+        <Button x:Name="SaveButton" Content="Save" Width="100" Margin="10" IsDefault="True"/>
     </StackPanel>
 </Window>
