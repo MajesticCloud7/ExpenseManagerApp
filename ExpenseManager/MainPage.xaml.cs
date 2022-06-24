@@ -1,7 +1,5 @@
 ﻿using ExpenseManager.DatabaseModels;
 using MongoDB.Driver;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -49,6 +47,11 @@ namespace ExpenseManager
                 };
                 dialog.ShowDialog();
             }
+        }
+
+        private void SignOutButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.GoToHomePage();
         }
     }
 }

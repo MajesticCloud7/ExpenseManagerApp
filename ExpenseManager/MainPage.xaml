@@ -7,7 +7,10 @@
       d:DesignHeight="450" d:DesignWidth="450"
       Title="MainPage">
     <StackPanel Margin="10">
-        <TextBlock Text="My Expense"/>
+        <DockPanel>
+            <TextBlock Text="My Expense"/>
+            <Button x:Name="SignOutButton" Content="Sign Out" Width="80" HorizontalAlignment="Right" Click="SignOutButton_Click"/>
+        </DockPanel>
         <Separator Height="20"/>
         <UniformGrid Rows="1" Width="165" HorizontalAlignment="Left">
             <Button x:Name="AddExpenseButton" Content="Add" Width="80" HorizontalAlignment="Left" Click="AddExpenseButton_Click"/>
