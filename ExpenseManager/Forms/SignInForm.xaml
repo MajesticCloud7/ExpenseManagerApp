@@ -1,4 +1,4 @@
-﻿<Window x:Class="ExpenseManager.SignUpForm"
+﻿<Window x:Class="ExpenseManager.Forms.SignInForm"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -18,14 +18,10 @@
             <Style TargetType="TextBox" BasedOn="{StaticResource BaseStyle}"/>
             <Style TargetType="PasswordBox" BasedOn="{StaticResource BaseStyle}"/>
         </StackPanel.Resources>
-        <TextBlock Text="Email"/>
-        <TextBox x:Name="EmailBox"/>
         <TextBlock Text="Username"/>
         <TextBox x:Name="UsernameBox"/>
         <TextBlock Text="Password"/>
-        <PasswordBox x:Name="FirstPasswordBox"/>
-        <TextBlock Text="Repeat Password"/>
-        <PasswordBox x:Name="SecondPasswordBox"/>
-        <Button x:Name="SignUpButton" Content="Sign Up" Width="100" Margin="10" IsDefault="True" Click="SignUpButton_Click"/>
+        <PasswordBox x:Name="PasswordBox"/>
+        <Button x:Name="SignInButton" Content="Sign In" Width="100" Margin="10" IsDefault="True" Click="SignInButton_Click"/>
     </StackPanel>
 </Window>

@@ -1,8 +1,9 @@
 ﻿using ExpenseManager.DatabaseModels;
+using ExpenseManager.Verifiers;
 using MongoDB.Driver;
 using System.Windows;
 
-namespace ExpenseManager
+namespace ExpenseManager.Forms
 {
     /// <summary>
     /// Interaction logic for SignInForm.xaml

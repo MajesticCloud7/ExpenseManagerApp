@@ -2,36 +2,35 @@
 using MongoDB.Driver;
 using System.Windows;
 
-namespace ExpenseManager
+namespace ExpenseManager.Forms
 {
     /// <summary>
-    /// Interaction logic for EditExpenseForm.xaml
+    /// Interaction logic for NewExpenseForm.xaml
     /// </summary>
-    public partial class EditExpenseForm : Window
+    public partial class NewExpenseForm : Window
     {
+        private readonly User RecordOwner;
         private readonly IMongoCollection<Record> RecordsCollection;
-        public Record Expense { get; set; }
+        public Record NewExpense { get; private set; }
 
-        public EditExpenseForm(Record expense, IMongoCollection<Record> recordsCollection)
+        public NewExpenseForm(User recordOwner, IMongoCollection<Record> recordsCollection)
         {
             InitializeComponent();
-            Expense = expense;
+            RecordOwner = recordOwner;
             RecordsCollection = recordsCollection;
-            Loaded += (o, e) => DataContext = Expense;
+            AmountBox.Focus();
         }
 
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             var amountString = AmountBox.Text;
             var description = DescriptionBox.Text;
 
             if (double.TryParse(amountString, out var amount) && amount > 0)
             {
-                var updateDefinition = Builders<Record>.Update
-                    .Set(r => r.Amount, amount)
-                    .Set(r => r.Description, description);
-
-                RecordsCollection.FindOneAndUpdate(r => r.Id == Expense.Id, updateDefinition);
+                var newExpense = new Record(RecordOwner.Id, RecordType.Expense, amount, description);
+                RecordsCollection.InsertOne(newExpense);
+                NewExpense = newExpense;
                 DialogResult = true;
             }
             else

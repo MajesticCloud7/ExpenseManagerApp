@@ -1,9 +1,10 @@
 ﻿using ExpenseManager.DatabaseModels;
+using ExpenseManager.Forms;
 using MongoDB.Driver;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace ExpenseManager
+namespace ExpenseManager.Pages
 {
     /// <summary>
     /// Interaction logic for HomePage.xaml

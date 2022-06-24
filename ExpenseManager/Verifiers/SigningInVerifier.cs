@@ -1,7 +1,7 @@
 ﻿using ExpenseManager.DatabaseModels;
 using System.Collections.Generic;
 
-namespace ExpenseManager
+namespace ExpenseManager.Verifiers
 {
     public static class SigningInVerifier
     {
