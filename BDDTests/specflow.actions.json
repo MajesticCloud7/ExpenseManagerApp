@@ -1,0 +1,8 @@
+{
+  "windowsAppDriver": {
+    "capabilities": {
+      "app": "C:/Users/rugil/OneDrive/Stalinis kompiuteris/UNI/3_kursas/2_semestras/Programų Kūrimo Procesas/LD3/ExpenseManagerApp/ExpenseManager/bin/Debug/net6.0-windows/ExpenseManager.exe"
+    },
+    "WindowsAppDriverPath": "C:/Program Files (x86)/Windows Application Driver/WinAppDriver.exe"
+  }
+}
