@@ -26,10 +26,14 @@ namespace ExpenseManager.Forms
             var password = PasswordBox.Password;
             var existingUsers = UsersCollection.Find(_ => true).ToList();
 
-            if (SigningInVerifier.Verify(username, password, existingUsers))
+            if (SigningInVerifier.Verify(username, password, existingUsers, out var errorText))
             {
                 SignedInUser = UsersCollection.Find(u => u.Username.Equals(username)).First();
                 DialogResult = true;
+            }
+            else
+            {
+                ErrorBox.Show(errorText);
             }
         }
     }

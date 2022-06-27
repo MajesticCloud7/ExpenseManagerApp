@@ -27,11 +27,15 @@ namespace ExpenseManager.Forms
             var secondPassword = SecondPasswordBox.Password;
             var existingUsers = UsersCollection.Find(_ => true).ToList();
 
-            if (SigningUpVerifier.Verify(email, username, firstPassword, secondPassword, existingUsers))
+            if (SigningUpVerifier.Verify(email, username, firstPassword, secondPassword, existingUsers, out var errorText))
             {
                 var newUser = new User(email, username, firstPassword);
                 UsersCollection.InsertOne(newUser);
                 DialogResult = true;
+            }
+            else
+            {
+                ErrorBox.Show(errorText);
             }
         }
     }

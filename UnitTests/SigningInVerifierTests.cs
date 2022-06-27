@@ -9,7 +9,7 @@ namespace UnitTests
         [MemberData(nameof(VerifyTestCases))]
         public void Verify(string username, string password, List<User> existingUsers, bool expected)
         {
-            var actual = SigningInVerifier.Verify(username, password, existingUsers);
+            var actual = SigningInVerifier.Verify(username, password, existingUsers, out _);
             Assert.Equal(expected, actual);
         }
 

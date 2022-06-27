@@ -9,7 +9,7 @@ namespace UnitTests
         [MemberData(nameof(VerifyTestCases))]
         public void Verify(string email, string username, string firstPassword, string secondPassword, List<User> existingUsers, bool expected)
         {
-            var actual = SigningUpVerifier.Verify(email, username, firstPassword, secondPassword, existingUsers);
+            var actual = SigningUpVerifier.Verify(email, username, firstPassword, secondPassword, existingUsers, out _);
             Assert.Equal(expected, actual);
         }
 

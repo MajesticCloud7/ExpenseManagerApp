@@ -5,11 +5,11 @@ namespace ExpenseManager.Verifiers
 {
     public static class SigningInVerifier
     {
-        public static bool Verify(string username, string password, List<User> existingUsers)
+        public static bool Verify(string username, string password, List<User> existingUsers, out string errorText)
         {
             if (EmptyValuesExist(username, password))
             {
-                ErrorBox.Show("Both fields must be filled.");
+                errorText = "Both fields must be filled.";
                 return false;
             }
             else
@@ -17,18 +17,19 @@ namespace ExpenseManager.Verifiers
                 var user = existingUsers.Find(u => u.Username.Equals(username));
                 if (user is null)
                 {
-                    ErrorBox.Show("Entered username does not exist.");
+                    errorText = "Entered username does not exist.";
                     return false;
                 }
                 else
                 {
                     if (!user.Password.Equals(password))
                     {
-                        ErrorBox.Show("Wrong password.");
+                        errorText = "Wrong password.";
                         return false;
                     }
                     else
                     {
+                        errorText = string.Empty;
                         return true;
                     }
                 }
