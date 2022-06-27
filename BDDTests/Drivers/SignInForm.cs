@@ -4,8 +4,7 @@ namespace BDDTests.Drivers
 {
     public class SignInForm : SignInFormElements
     {
-        public SignInForm(AppDriver appDriver)
-            : base(appDriver)
+        public SignInForm(AppDriver appDriver) : base(appDriver)
         {
         }
 
