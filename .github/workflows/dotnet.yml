@@ -30,5 +30,3 @@ jobs:
       run: msbuild ExpenseManagerApp.sln /p:configuration="Release"
     - name: Run Unit Tests
       run: vstest.console.exe .\UnitTests\bin\Release\net6.0-windows\UnitTests.dll
-    - name: Run BDD Tests
-      run: vstest.console.exe .\BDDTests\bin\Release\net6.0-windows\BDDTests.dll
